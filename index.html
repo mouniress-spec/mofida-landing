@@ -33,9 +33,10 @@
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
     .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; background: var(--lime); color: var(--green); border-radius: 50%; font-size: 16px; }
     .nav-note { color: var(--muted); font: 500 12px "Manrope", sans-serif; }
-    .hero { position: relative; min-height: 625px; display: flex; align-items: flex-end; padding: 54px 7% 62px; overflow: hidden; background: linear-gradient(90deg, rgba(10,35,29,.93) 0%, rgba(10,35,29,.78) 47%, rgba(10,35,29,.18) 100%), url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1800&q=85") center/cover; color: white; }
+    .hero { position: relative; min-height: 625px; display: block; padding: 54px 7% 62px; overflow: hidden; background: linear-gradient(90deg, rgba(10,35,29,.93) 0%, rgba(10,35,29,.78) 47%, rgba(10,35,29,.18) 100%), url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1800&q=85") center/cover; color: white; }
     .hero::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.12); pointer-events: none; }
     .hero-copy { position: relative; z-index: 1; max-width: 680px; }
+    .hero > div:first-child { position: relative; z-index: 1; max-width: 680px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--lime); font-size: 12px; margin-bottom: 22px; }
     .eyebrow::before { content: ""; width: 25px; height: 1px; background: var(--lime); }
     h1 { margin: 0; max-width: 720px; font-size: clamp(39px, 5.2vw, 73px); line-height: 1.25; font-weight: 800; text-wrap: balance; }
@@ -46,6 +47,7 @@
     .button:hover { background: #e0f995; transform: translateY(-2px); }
     .button span { font-family: "Manrope", sans-serif; font-size: 20px; line-height: 1; }
     .microcopy { color: rgba(255,255,255,.72); font-size: 12px; }
+    .visual { display: none; }
     .content { padding-bottom: 55px; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 62px 0 25px; border-bottom: 1px solid var(--line); }
     .section-head h2 { margin: 0; max-width: 460px; font-size: 27px; line-height: 1.5; }
