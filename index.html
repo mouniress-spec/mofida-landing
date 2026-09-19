@@ -60,11 +60,13 @@
     .proof-item strong { display: block; margin-bottom: 7px; font-size: 16px; }
     .proof-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .details, .how, .proof, .final-cta { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
-    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; padding: 72px 0 62px; border-bottom: 1px solid var(--line); }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; padding: 72px 42px 62px; background: #e6efdf; border: 1px solid #d1dfca; border-radius: 18px; }
     .details h2 { max-width: 510px; margin: 0 0 22px; font-size: 30px; line-height: 1.55; overflow-wrap: anywhere; }
     .details-lead { margin: 0; color: var(--muted); font-size: 15px; line-height: 2; }
+    .section-button { display: inline-flex; align-items: center; justify-content: center; margin-top: 25px; padding: 14px 21px; background: var(--green); color: white; text-decoration: none; border-radius: 5px; font-size: 15px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .section-button:hover { background: #245b4d; transform: translateY(-2px); }
     .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; align-content: start; }
-    .benefit { min-height: 118px; padding: 20px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+    .benefit { min-height: 118px; padding: 20px; background: var(--white); border: 1px solid #cbd9c5; border-radius: 12px; box-shadow: 0 7px 0 rgba(21,63,53,.08); }
     .benefit b { display: block; margin-bottom: 8px; color: var(--green); font-size: 16px; }
     .benefit span { color: var(--muted); font-size: 13px; line-height: 1.7; }
     .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 58px 0 65px; }
@@ -85,7 +87,7 @@
       .microcopy { width: 100%; text-align: center; }
       .section-head { display: block; padding-top: 45px; }
       .section-head p { margin-top: 13px; }
-      .details { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
+      .details { grid-template-columns: 1fr; gap: 28px; padding: 39px 18px 32px; border-radius: 14px; }
       .details h2 { font-size: 25px; }
       .benefits { grid-template-columns: 1fr; }
       .how { grid-template-columns: 1fr; gap: 13px; padding: 42px 0 48px; }
@@ -137,6 +139,7 @@
           <div class="eyebrow">ماذا ستجد في الدليل؟</div>
           <h2 id="details-title">أفكار بسيطة تساعدك على استعادة إيقاع يومك.</h2>
           <p class="details-lead">الدليل مصمم ليكون عمليًا وسهل التطبيق، حتى لو كان يومك مزدحمًا أو بدأت من الصفر.</p>
+          <a class="section-button" href="https://m.me/maa3loomat?ref=guia_7_habitos">احصل على الدليل الآن</a>
         </div>
         <div class="benefits">
           <div class="benefit"><b>تنظيم الوقت</b><span>رتّب يومك بدون قوائم معقدة.</span></div>
