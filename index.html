@@ -3,80 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>دليل 7 خطوات لتحسين العادات اليومية</title>
+  <meta name="description" content="دليل عملي من 7 خطوات لبناء عادات يومية أفضل وتنظيم الوقت.">
+  <title>دليل 7 خطوات لعادات يومية أفضل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #17252a;
+      --muted: #617075;
+      --paper: #f5f1e9;
+      --card: #fffdf8;
+      --line: #d8d2c6;
+      --teal: #0e7770;
+      --teal-dark: #07534f;
+      --coral: #e76f51;
+      --yellow: #f4c95d;
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f6f7fb;
-      color: #1d2433;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "IBM Plex Sans Arabic", sans-serif;
     }
-    .wrap {
-      max-width: 820px;
-      margin: 40px auto;
-      padding: 20px;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .35;
+      background-image: linear-gradient(rgba(23,37,42,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(23,37,42,.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
     }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: 0 12px 25px rgba(0,0,0,.08);
-    }
-    h1 {
-      font-size: 32px;
-      line-height: 1.5;
-      margin: 0 0 16px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #44506a;
-    }
-    .cta-box {
-      margin: 22px 0;
-      background: #f1edff;
-      color: #3a2cc1;
-      border-radius: 12px;
-      padding: 18px;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .button {
-      display: inline-block;
-      background: #4a3de0;
-      color: white;
-      text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 12px;
-      font-weight: bold;
-      margin-top: 12px;
-    }
-    ul {
-      padding-right: 22px;
-      line-height: 2;
-      color: #2e3a55;
+    .page { position: relative; min-height: 100vh; overflow: hidden; }
+    .nav, .hero, .proof { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--teal); color: white; border-radius: 50%; font-size: 19px; }
+    .nav-note { color: var(--muted); font-size: 13px; }
+    .hero { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(48px, 8vw, 112px); align-items: center; padding: clamp(52px, 9vw, 116px) 0 88px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--teal); font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: .04em; margin-bottom: 22px; }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--coral); }
+    h1 { max-width: 620px; margin: 0; font-size: clamp(42px, 5.6vw, 76px); line-height: 1.05; letter-spacing: 0; font-weight: 700; }
+    .accent { color: var(--coral); }
+    .intro { max-width: 520px; margin: 26px 0 30px; color: var(--muted); font-size: 19px; line-height: 1.9; }
+    .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; gap: 12px; background: var(--teal); color: white; text-decoration: none; padding: 16px 22px; border-radius: 5px; font-weight: 700; font-size: 17px; box-shadow: 5px 5px 0 var(--teal-dark); transition: transform .2s ease, box-shadow .2s ease; }
+    .button:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--teal-dark); }
+    .button span { display: grid; place-items: center; width: 23px; height: 23px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; }
+    .microcopy { color: var(--muted); font-size: 13px; }
+    .visual { position: relative; min-height: 490px; }
+    .visual-frame { position: absolute; inset: 14px 0 0 24px; background: var(--teal); border: 1px solid var(--teal-dark); transform: rotate(3deg); }
+    .visual-card { position: relative; z-index: 1; min-height: 490px; padding: 30px; background: var(--card); border: 1px solid var(--line); box-shadow: 12px 12px 0 rgba(23,37,42,.13); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .card-label { font-family: "DM Mono", monospace; font-size: 12px; color: var(--muted); }
+    .card-number { color: var(--coral); font-family: "DM Mono", monospace; font-size: 14px; }
+    .big-seven { margin: 28px 0 22px; color: var(--teal); font-family: "DM Mono", monospace; font-size: 132px; line-height: .8; font-weight: 500; }
+    .visual-title { max-width: 270px; font-size: 27px; line-height: 1.35; font-weight: 700; }
+    .steps { display: grid; gap: 9px; margin-top: 26px; }
+    .step { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 14px; }
+    .step b { display: grid; place-items: center; width: 25px; height: 25px; background: var(--yellow); color: var(--ink); border-radius: 50%; font-family: "DM Mono", monospace; font-size: 11px; }
+    .proof { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding: 28px 0 44px; gap: 28px; }
+    .proof-item { display: flex; gap: 12px; align-items: flex-start; }
+    .proof-icon { color: var(--coral); font-size: 22px; line-height: 1; }
+    .proof-item strong { display: block; margin-bottom: 5px; font-size: 16px; }
+    .proof-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    @media (max-width: 800px) {
+      .nav, .hero, .proof { width: min(100% - 32px, 600px); }
+      .nav { padding-top: 20px; }
+      .nav-note { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 54px; }
+      h1 { font-size: clamp(42px, 13vw, 64px); }
+      .intro { font-size: 17px; }
+      .visual, .visual-card { min-height: 410px; }
+      .visual-frame { inset: 12px 0 0 12px; }
+      .visual-card { padding: 24px; }
+      .big-seven { font-size: 105px; margin-top: 25px; }
+      .proof { grid-template-columns: 1fr; gap: 18px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>دليل 7 خطوات لتحسين العادات اليومية</h1>
-      <p>خطة عملية تساعدك على تنظيم يومك، تقليل التشتت، وتحسين العادات بدون تعقيد.</p>
+  <div class="page">
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <div class="brand"><span class="brand-mark">م</span><span>معلومات مفيدة</span></div>
+      <div class="nav-note">دليل عملي · مجاني</div>
+    </nav>
 
-      <div class="cta-box">اكتب كلمة: دليل</div>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">دليل صغير · أثر كبير</div>
+          <h1>غيّر يومك، <span class="accent">خطوة</span> واحدة كل مرة.</h1>
+          <p class="intro">خطة بسيطة من 7 خطوات تساعدك على بناء عادات أفضل، تقليل التشتت، واستعادة السيطرة على وقتك بدون تعقيد.</p>
+          <div class="cta-row">
+            <a class="button" href="https://m.me/maa3loomat?ref=guia_7_habitos">احصل على الدليل <span>←</span></a>
+            <span class="microcopy">اكتب كلمة: دليل</span>
+          </div>
+        </div>
 
-      <div>
-        <a class="button" href="https://m.me/maa3loomat?ref=guia_7_habitos">احصل على الدليل</a>
-      </div>
+        <div class="visual" aria-label="معاينة محتوى الدليل">
+          <div class="visual-frame"></div>
+          <div class="visual-card">
+            <div class="card-top"><span class="card-label">DAILY RESET / 01</span><span class="card-number">معلومات مفيدة</span></div>
+            <div class="big-seven">07</div>
+            <div class="visual-title">خطوات عملية ليوم أكثر هدوءًا وتركيزًا.</div>
+            <div class="steps">
+              <div class="step"><b>01</b><span>ابدأ بعادة صغيرة</span></div>
+              <div class="step"><b>02</b><span>رتّب أولوياتك</span></div>
+              <div class="step"><b>03</b><span>خفّف مصادر التشتت</span></div>
+              <div class="step"><b>04</b><span>راجع تقدمك بهدوء</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <ul>
-        <li>7 خطوات عملية</li>
-        <li>قائمة مراجعة جاهزة</li>
-        <li>بدء فوري من اليوم</li>
-        <li>تنظيم الوقت بشكل أسهل</li>
-      </ul>
-    </div>
+      <section class="proof" aria-label="محتوى الدليل">
+        <div class="proof-item"><span class="proof-icon">✦</span><div><strong>خطة واضحة</strong><p>خطوات قصيرة يمكن تطبيقها من اليوم.</p></div></div>
+        <div class="proof-item"><span class="proof-icon">↗</span><div><strong>بدون تعقيد</strong><p>أفكار عملية تناسب الحياة اليومية.</p></div></div>
+        <div class="proof-item"><span class="proof-icon">◌</span><div><strong>ابدأ الآن</strong><p>أرسل كلمة دليل عبر Messenger واحصل عليه.</p></div></div>
+      </section>
+    </main>
   </div>
 </body>
 </html>
