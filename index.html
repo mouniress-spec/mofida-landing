@@ -59,6 +59,20 @@
     .proof-number { display: block; margin-bottom: 18px; color: var(--green); font: 600 12px "Manrope", sans-serif; }
     .proof-item strong { display: block; margin-bottom: 7px; font-size: 16px; }
     .proof-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; padding: 72px 0 62px; border-bottom: 1px solid var(--line); }
+    .details h2 { margin: 0 0 22px; font-size: 30px; line-height: 1.55; }
+    .details-lead { margin: 0; color: var(--muted); font-size: 15px; line-height: 2; }
+    .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; align-content: start; }
+    .benefit { padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .benefit b { display: block; margin-bottom: 5px; color: var(--green); font-size: 16px; }
+    .benefit span { color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 58px 0 65px; }
+    .how-step { position: relative; padding-top: 31px; }
+    .how-step::before { content: attr(data-step); position: absolute; top: 0; right: 0; color: var(--green); font: 700 12px "Manrope", sans-serif; }
+    .how-step strong { display: block; margin-bottom: 8px; font-size: 16px; }
+    .how-step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .final-cta { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 38px 0 0; border-top: 1px solid var(--line); }
+    .final-cta h2 { margin: 0; font-size: 25px; line-height: 1.6; }
     @media (max-width: 800px) {
       .nav, .content { width: min(100% - 32px, 600px); }
       .nav { padding-top: 20px; }
@@ -70,6 +84,12 @@
       .microcopy { width: 100%; text-align: center; }
       .section-head { display: block; padding-top: 45px; }
       .section-head p { margin-top: 13px; }
+      .details { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
+      .details h2 { font-size: 25px; }
+      .benefits { grid-template-columns: 1fr; }
+      .how { grid-template-columns: 1fr; gap: 23px; padding: 42px 0 48px; }
+      .final-cta { display: block; padding-top: 30px; }
+      .final-cta h2 { margin-bottom: 21px; font-size: 22px; }
       .proof { grid-template-columns: 1fr; }
       .proof-item, .proof-item + .proof-item { min-height: auto; padding: 22px 0; border-left: 0; border-bottom: 1px solid var(--line); }
       .proof-item:last-child { border-bottom: 0; }
@@ -111,10 +131,35 @@
         </div>
       </section>
 
+      <section class="details" aria-labelledby="details-title">
+        <div>
+          <div class="eyebrow">ماذا ستجد في الدليل؟</div>
+          <h2 id="details-title">أفكار بسيطة تساعدك على استعادة إيقاع يومك.</h2>
+          <p class="details-lead">الدليل مصمم ليكون عمليًا وسهل التطبيق، حتى لو كان يومك مزدحمًا أو بدأت من الصفر.</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><b>تنظيم الوقت</b><span>رتّب يومك بدون قوائم معقدة.</span></div>
+          <div class="benefit"><b>تقليل التشتت</b><span>خفّف ما يسرق انتباهك خطوة بخطوة.</span></div>
+          <div class="benefit"><b>عادة صغيرة</b><span>ابدأ بتغيير يمكنك الاستمرار عليه.</span></div>
+          <div class="benefit"><b>مراجعة هادئة</b><span>تابع تقدمك بدون ضغط أو جلد للذات.</span></div>
+        </div>
+      </section>
+
+      <section class="how" aria-label="طريقة الحصول على الدليل">
+        <div class="how-step" data-step="01"><strong>اضغط على الزر</strong><p>ابدأ من هذه الصفحة في ثوانٍ.</p></div>
+        <div class="how-step" data-step="02"><strong>أرسل كلمة: دليل</strong><p>ستفتح لك محادثة Messenger مع الصفحة.</p></div>
+        <div class="how-step" data-step="03"><strong>استلم الدليل</strong><p>يصلك الرابط مباشرة في المحادثة.</p></div>
+      </section>
+
       <section class="proof" aria-label="محتوى الدليل">
         <div class="proof-item"><span class="proof-icon">✦</span><div><strong>خطة واضحة</strong><p>خطوات قصيرة يمكن تطبيقها من اليوم.</p></div></div>
         <div class="proof-item"><span class="proof-icon">↗</span><div><strong>بدون تعقيد</strong><p>أفكار عملية تناسب الحياة اليومية.</p></div></div>
         <div class="proof-item"><span class="proof-icon">◌</span><div><strong>ابدأ الآن</strong><p>أرسل كلمة دليل عبر Messenger واحصل عليه.</p></div></div>
+      </section>
+
+      <section class="final-cta">
+        <h2>جاهز لتبدأ بخطوة واحدة؟</h2>
+        <a class="button" href="https://m.me/maa3loomat?ref=guia_7_habitos">احصل على الدليل <span>←</span></a>
       </section>
     </main>
   </div>
