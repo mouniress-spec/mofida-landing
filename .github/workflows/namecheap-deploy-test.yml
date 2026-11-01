@@ -1,0 +1,41 @@
+name: Namecheap SSH deployment test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-namecheap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          DEPLOY_KEY: ${{ secrets.NAMECHEAP_SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.NAMECHEAP_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY"
+          test -n "$KNOWN_HOSTS"
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/namecheap_deploy
+          chmod 600 ~/.ssh/namecheap_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Upload harmless test file outside WordPress
+        env:
+          SSH_HOST: ${{ secrets.NAMECHEAP_SSH_HOST }}
+          SSH_USER: ${{ secrets.NAMECHEAP_SSH_USER }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_HOST" && test -n "$SSH_USER"
+          SSH_OPTS="-i $HOME/.ssh/namecheap_deploy -p 21098 -o BatchMode=yes -o StrictHostKeyChecking=yes"
+          ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" 'mkdir -p "$HOME/deploy-test"'
+          rsync -av -e "ssh $SSH_OPTS" deployment-test/ "$SSH_USER@$SSH_HOST:deploy-test/"
+          ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" 'test -f "$HOME/deploy-test/connection-test.txt" && echo "Test file delivered to deploy-test"'
