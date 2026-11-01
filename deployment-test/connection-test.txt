@@ -1,0 +1,2 @@
+ALMOFIDA / Namecheap SSH test.
+This file is safe to deploy outside public_html.
